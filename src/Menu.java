@@ -2,19 +2,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-    public Student add(List<Student> studentList) {
+    public Student add(List<Student> studentList , int id) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("-Enter ID: ");
-        int id = Integer.parseInt(sc.nextLine());
-        for (Student student : studentList
-        ) {
-            if ((id != student.id) && (id > 0)) {
-                System.out.print("");
-            } else {
-                System.out.println("Id đã tồn tại vui lòng nhập id khác");
-
-            }
-        }
+//        System.out.println("-Enter ID: ");
+//        int id = Integer.parseInt(sc.nextLine());
+//        for (Student student : studentList
+//        ) {
+//            if ((id != student.id) && (id > 0)) {
+//                System.out.print("");
+//            } else {
+//                System.out.println("Id đã tồn tại vui lòng nhập id khác");
+//
+//            }
+//        }
         System.out.println("-Enter name: ");
         String name = sc.nextLine();
         System.out.println("-Enter date of birth: ");
@@ -31,7 +31,6 @@ public class Menu {
         ) {
             System.out.println(s.toString());
         }
-
     }
 
     public boolean delete(List<Student> studentList){

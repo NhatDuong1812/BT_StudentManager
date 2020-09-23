@@ -18,7 +18,21 @@ public class Mains {
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1:
-                    studentArrayList.add(mn.add(studentArrayList));
+                    System.out.println("-Enter ID: ");
+                    int id = Integer.parseInt(sc.nextLine());
+                    int check = 0;
+                    for (Student student : studentArrayList
+                    ) {
+                        if ((id == student.id)) {
+                            check = 1;
+                            break;
+                        }
+                    }
+                    if (check == 1) {
+                        System.out.println("Id đã tồn tại vui lòng nhập lại");
+                    } else {
+                        studentArrayList.add(mn.add(studentArrayList, id));
+                    }
                     break;
                 case 2:
                     studentArrayList.remove(mn.delete(studentArrayList));
@@ -26,7 +40,7 @@ public class Mains {
                 case 3:
                     System.out.println("Enter id want find: ");
                     int i = Integer.parseInt(sc.nextLine());
-                    System.out.println(mn.search(studentArrayList,i));
+                    System.out.println(mn.search(studentArrayList, i));
                     break;
                 case 4:
                     mn.show(studentArrayList);
